@@ -4,7 +4,7 @@
 
 Access the deployed application here:
 
-**[https://delivery-risk-predictor.streamlit.app](https://delivery-risk-predictor.streamlit.app)**
+**[https://delivery-risk-predictor.streamlit.app](https://delivery-risk-predictor-nlrdjgbunuj98pyteq85kw.streamlit.app/)**
 
 This interactive web application predicts whether an e-commerce delivery will be **On-Time**, **At-Risk**, or **Delayed** based on operational and logistics features.
 
