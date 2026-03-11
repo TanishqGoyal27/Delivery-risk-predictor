@@ -1,88 +1,149 @@
 # Delivery Risk Predictor
 
-## Overview
+## Live Demo
 
-This project predicts whether an e-commerce delivery will be **On-Time**, **At-Risk**, or **Delayed** using machine learning.
-The model analyzes logistics and operational features such as shipment distance, warehouse processing time, seller reliability, traffic conditions, and weather indicators.
+Access the deployed application here:
 
-An interactive web application was built using Streamlit so users can input delivery details and instantly get a prediction.
+**[https://delivery-risk-predictor.streamlit.app](https://delivery-risk-predictor.streamlit.app)**
 
----
-
-## Features
-
-* Data integration from multiple logistics datasets
-* Feature engineering including shipment distance and seller performance metrics
-* Handling class imbalance using SMOTE
-* Training and comparison of multiple machine learning models
-* Model evaluation using Accuracy, Precision, Recall, and F1 Score
-* Visualization using confusion matrix and ROC curves
-* Interactive prediction interface using Streamlit
+This interactive web application predicts whether an e-commerce delivery will be **On-Time**, **At-Risk**, or **Delayed** based on operational and logistics features.
 
 ---
 
-## Machine Learning Models Used
+# Overview
+
+Efficient logistics management is critical for e-commerce platforms. Delivery delays can negatively impact customer satisfaction and operational efficiency.
+
+This project uses **machine learning** to predict delivery risk using key logistics indicators such as:
+
+* shipment distance
+* warehouse processing time
+* seller reliability
+* traffic conditions
+* weather conditions
+
+An interactive **Streamlit dashboard** allows users to input delivery parameters and receive real-time predictions.
+
+---
+
+# Key Features
+
+* Machine learning pipeline for delivery risk prediction
+* Handling class imbalance using **SMOTE**
+* Training and evaluation of multiple ML models
+* Selection of **Random Forest** as the best-performing model
+* Interactive web interface built with **Streamlit**
+* Real-time predictions with confidence estimation
+* Visualizations for model evaluation
+
+---
+
+# Machine Learning Workflow
+
+The project follows a complete ML pipeline:
+
+```
+Data Collection
+      ↓
+Data Cleaning & Feature Engineering
+      ↓
+Handling Class Imbalance (SMOTE)
+      ↓
+Model Training & Evaluation
+      ↓
+Model Selection (Random Forest)
+      ↓
+Model Deployment (Streamlit App)
+```
+
+---
+
+# Machine Learning Models Evaluated
+
+The following models were trained and compared:
 
 * Random Forest
 * Logistic Regression
 * Decision Tree
 * K-Nearest Neighbors (KNN)
 
-Random Forest achieved the best performance and was selected as the final model.
+Random Forest produced the **highest accuracy and best overall performance**, so it was selected as the final model.
 
 ---
 
-## Tech Stack
+# Technology Stack
+
+**Programming Language**
 
 * Python
+
+**Data Processing**
+
 * Pandas
 * NumPy
+
+**Machine Learning**
+
 * Scikit-learn
-* Streamlit
+* Imbalanced-learn (SMOTE)
+
+**Visualization**
+
 * Matplotlib
 * Seaborn
 
+**Web Application**
+
+* Streamlit
+
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 delivery-risk-predictor
 │
-├── app.py                     # Streamlit web application
-├── delivery_risk_model.pkl   # Trained machine learning model
-├── requirements.txt          # Python dependencies
+├── app.py
+│   Streamlit application for delivery risk prediction
 │
-├── data/                     # Dataset files
+├── delivery_risk_model.pkl
+│   Trained Random Forest model
+│
+├── requirements.txt
+│   Project dependencies
+│
+├── data/
+│   Dataset files used for training
 │
 └── notebook/
-    └── code.ipynb            # Model development notebook
+    └── code.ipynb
+       Model training and experimentation notebook
 ```
 
 ---
 
-## Run the Project Locally
+# Running the Project Locally
 
-### 1. Clone the repository
+### Clone the Repository
 
 ```
 git clone https://github.com/TanishqGoyal27/Delivery-risk-predictor.git
 cd Delivery-risk-predictor
 ```
 
-### 2. Install dependencies
+### Install Dependencies
 
 ```
 pip install -r requirements.txt
 ```
 
-### 3. Run the Streamlit application
+### Run the Application
 
 ```
 streamlit run app.py
 ```
 
-The app will open in your browser at:
+The app will open in your browser:
 
 ```
 http://localhost:8501
@@ -90,33 +151,60 @@ http://localhost:8501
 
 ---
 
-## Example Prediction Inputs
+# Model Inputs
 
-The model takes the following inputs:
+The prediction model uses the following features:
 
 * Order Volume
-* Warehouse Processing Time
-* Shipment Distance
+* Warehouse Processing Time (hours)
+* Shipment Distance (km)
 * Seller On-Time Rate
 * Delivery Time (days)
 * Traffic Condition
-* Weather Indicator
+* Weather Condition
 
-Based on these inputs, the model predicts whether the delivery is likely to be **On-Time**, **At-Risk**, or **Delayed**.
+Based on these parameters, the model predicts whether a delivery will be:
 
----
-
-## Future Improvements
-
-* Deploy the application publicly using Streamlit Cloud
-* Add more advanced models such as XGBoost
-* Integrate real-time logistics data
-* Improve feature engineering with additional delivery metrics
+* **On-Time**
+* **At-Risk**
+* **Delayed**
 
 ---
 
-## Author
+# Example Use Case
 
-Tanishq Goyal
+A logistics manager can use this tool to:
+
+* estimate delivery risk before dispatch
+* identify potential delays
+* optimize warehouse processing
+* improve delivery reliability
+
+---
+
+# Future Improvements
+
+Potential enhancements include:
+
+* Integration with real-time logistics data
+* Addition of advanced models such as **XGBoost**
+* Explainable AI techniques (feature importance)
+* Improved dashboard visualizations
+* API-based deployment for enterprise systems
+
+---
+
+# Author
+
+**Tanishq Goyal**
+
 B.Tech Computer Engineering
 Thapar Institute of Engineering and Technology
+
+---
+
+# License
+
+This project is for educational and research purposes.
+
+---
